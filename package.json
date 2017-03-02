@@ -1,0 +1,30 @@
+{
+  "name": "weatherme-sender",
+  "version": "1.0.0",
+  "description": "The automated app that send the weatherme notifications",
+  "main": "app.js",
+  "scripts": {
+    "prestart": "babel . --ignore node_modules,build -d build",
+    "start": "node ./build/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alackey/Weatherme-sender.git"
+  },
+  "author": "alackey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Alackey/Weatherme-sender/issues"
+  },
+  "homepage": "https://github.com/Alackey/Weatherme-sender#readme",
+  "dependencies": {
+    "aws-sdk": "^2.22.0",
+    "forecast.io": "0.0.11",
+    "mailgun-js": "^0.8.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-preset-env": "^1.1.10"
+  }
+}
