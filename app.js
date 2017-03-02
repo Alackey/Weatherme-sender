@@ -4,15 +4,23 @@ import getWeather from './weather';
 const main = setInterval(() => {
   console.log('hello');
   getAlertByTime().then((alerts) => {
-    console.log(alerts);
-    if (alerts.count > 0) {
+    // Alerts at this time
+    if (alerts.Count > 0) {
       console.log('send email');
-    }
 
-    // TODO: Change to alerts long/lat
-    getWeather(34.0368528, -117.7666566).then((data) => {
-      console.log(data);
-    });
+      // Work with each alert
+      alerts.Items.forEach((item) => {
+        console.log(item);
+        const location = item.location;
+
+        // Get the weather for the items location
+        getWeather(location.latitude, location.longitude).then((data) => {
+          console.log(data);
+        }).catch((err) => {
+          console.log(err);
+        });
+      });
+    }
   }).catch((err) => {
     console.log(err);
   });
