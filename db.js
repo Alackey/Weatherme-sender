@@ -13,6 +13,7 @@ const getAlertByTime = function getAlertByTime() {
     eventtime.setUTCMilliseconds(0);
     eventtime = eventtime.getTime();
     console.log(`Current time: ${eventtime}`);
+    //eventtime = 3029340323;
 
     const params = {
       TableName: table,
